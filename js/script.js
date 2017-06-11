@@ -1059,9 +1059,9 @@ var update = function(){
 		}
 		
 		//recalculates money/proofs per tick
-		player.moneyPerClick = ((player.buildings[3].owned * player.mult[0] * 0.1) + 1) * globalMult[0] * math.pow(10,player.infinicurr);
-		player.moneyPerSecond = (((player.buildings[0].owned * player.deriv1Money * player.mult[0]) + (player.buildings[2].owned * 2 * player.mult[0])) * globalMult[0] * math.pow(10,player.infinicurr));
-		player.proofsPerSecond = Math.round(player.buildings[1].owned * player.mult[0] * globalMult[0] * math.pow(10,player.infinicurr));
+		player.moneyPerClick = ((player.buildings[3].owned * player.mult[0] * 0.1) + 1) * globalMult[0] * math.pow(10,player.infiniCurr);
+		player.moneyPerSecond = (((player.buildings[0].owned * player.deriv1Money * player.mult[0]) + (player.buildings[2].owned * 2 * player.mult[0])) * globalMult[0] * math.pow(10,player.infiniCurr));
+		player.proofsPerSecond = Math.round(player.buildings[1].owned * player.mult[0] * globalMult[0] * math.pow(10,player.infiniCurr));
 		player.netMoneyPerSecond = player.moneyPerSecond - (player.proofsPerSecond * player.costPerProof);
 		player.moneyPerAutoclick = player.upgrades[0] * player.moneyPerClick;
 		
