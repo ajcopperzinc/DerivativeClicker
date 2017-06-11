@@ -224,7 +224,7 @@ function setMinTickLength(){
     if(minTickLength == null) return;
     
     player.minTickLength = minTickLength;
-    player.timeMult = -1*player.infiniCurr*player.infiniCurr+10*player.infiniCurr+1;
+    player.timeMult = 1;
     while(player.updateInterval * player.timeMult < player.minTickLength) player.timeMult *= 1000 / player.minTickLength;
     $("#minTickLength").html(minTickLength);
 }
