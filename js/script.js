@@ -12,7 +12,7 @@ window.onblur = function(){isActive=false;};
 
 //functions that add to variables
 function addMoney(money) {
-	player.money = Math.round((player.money + money)*100)/100;
+	player.money = Math.round((player.money + money * math.pow(10, player.infiniCurr))*100)/100;
 	if(money > 0){
 		player.totalMoneyEarned = Math.round((player.totalMoneyEarned + money)*100)/100;
 	}
@@ -28,13 +28,13 @@ function addNetMoneyPerSecond(nmps){
 }
 
 function addMoneyPerClick(mpc){
-	player.moneyPerClick = Math.round((player.moneyPerClick + mpc)*100)/100;
+	player.moneyPerClick = Math.round((player.moneyPerClick + mpc * math.pow(10, player.infiniCurr))*100)/100;
 }
 
 function addProofs(proofs){
-	player.proofs += Math.round(proofs);
-	player.proofsToNextCurr -= Math.round(proofs);
-	player.totalProofs += Math.round(proofs);
+	player.proofs += Math.round(proofs) * math.pow(10, player.infiniCurr);
+	player.proofsToNextCurr -= Math.round(proofs) * math.pow(10, player.infiniCurr);
+	player.totalProofs += Math.round(proofs) * math.pow(10, player.infiniCurr);
 	addMoney(-Math.round(proofs) * player.costPerProof);
 }
 
