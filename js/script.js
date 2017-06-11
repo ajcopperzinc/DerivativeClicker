@@ -1059,9 +1059,9 @@ var update = function(){
 		}
 		
 		//recalculates money/proofs per tick
-		player.moneyPerClick = ((player.buildings[3].owned * player.mult[0] * 0.1) + 1) * globalMult[0] * math.pow(10,player.infiniCurr);
-		player.moneyPerSecond = (((player.buildings[0].owned * player.deriv1Money * player.mult[0]) + (player.buildings[2].owned * 2 * player.mult[0])) * globalMult[0] * math.pow(10,player.infiniCurr));
-		player.proofsPerSecond = Math.round(player.buildings[1].owned * player.mult[0] * globalMult[0] * math.pow(10,player.infiniCurr));
+		player.moneyPerClick = ((player.buildings[3].owned * player.mult[0] * 0.1) + 1) * globalMult[0];
+		player.moneyPerSecond = (((player.buildings[0].owned * player.deriv1Money * player.mult[0]) + (player.buildings[2].owned * 2 * player.mult[0])) * globalMult[0]);
+		player.proofsPerSecond = Math.round(player.buildings[1].owned * player.mult[0] * globalMult[0]);
 		player.netMoneyPerSecond = player.moneyPerSecond - (player.proofsPerSecond * player.costPerProof);
 		player.moneyPerAutoclick = player.upgrades[0] * player.moneyPerClick;
 		
@@ -1069,7 +1069,7 @@ var update = function(){
 		update.count2 += player.timeMult;
 		player.totalTicks += player.timeMult;
 		
-		player.updateInterval = 1000 * Math.pow(0.98, Math.log(player.buildings[4].owned * player.mult[0] * globalMult[0] + 1));
+		player.updateInterval = 1000 * Math.pow(0.98, 113*player.infiniCurr + Math.log(player.buildings[4].owned * player.mult[0] * globalMult[0] + 1));
 		
 		//updateResetCurrBuyables fixes minimization by running until the interval tracker is less than 0 if the thing isn't active
 		if(!isActive) update.intervalTracker -= player.updateInterval * player.timeMult;
